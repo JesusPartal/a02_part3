@@ -15,7 +15,7 @@ public class MyMain {
 		
 		// m2 = [5,20,1,10]
 		MyList<Integer> m2 = new MyDynamicList<Integer>();
-		m2.addElement(0, 5); 
+		m2.addElement(0, 5);
 		m2.addElement(1, 20);
 		m2.addElement(2, 1);
 		m2.addElement(3, 10);
@@ -31,34 +31,35 @@ public class MyMain {
 		//1. We test ChangeMaking_1
 		//----------------------------
 		ChangeMaking ex1 = new ChangeMaking();
+//
+//		for(int i=1; i<=2; i++)
+//		{
+//
+//			switch(i){
+//				case 1:
+//					System.out.println("\n----------- Test: ChangeMaking with Dummy Selection Function -------------\n");
+//					break;
+//				case 2:
+//					System.out.println("\n----------- Test: ChangeMaking with Biggest Coin Selection Function -------------\n");
+//					break;
+//			}
+//
+//			System.out.println("The change of the amount 36 is:");
+//			resM = ex1.solve(i,m1, 36);
+//			System.out.println();
+//
+//			System.out.println("The change of the amount 36 is:");
+//			resM = ex1.solve(i,m2, 36);
+//			System.out.println();
+//
+//			System.out.println("The change of the amount 58 is:");
+//			resM = ex1.solve(i,m2, 58);
+//			System.out.println();
+//
+//			System.out.println();
+//		}
 
-		for(int i=1; i<=2; i++)
-		{
-		
-			switch(i){	
-				case 1: 
-					System.out.println("\n----------- Test: ChangeMaking with Dummy Selection Function -------------\n");
-					break;
-				case 2:
-					System.out.println("\n----------- Test: ChangeMaking with Biggest Coin Selection Function -------------\n");
-					break;
-			}	
-			
-			System.out.println("The change of the amount 36 is:");
-			resM = ex1.solve(i,m1, 36);
-			System.out.println();
-			
-			System.out.println("The change of the amount 36 is:");
-			resM = ex1.solve(i,m2, 36);
-			System.out.println();
-	
-			System.out.println("The change of the amount 58 is:");
-			resM = ex1.solve(i,m2, 58);
-			System.out.println();
-			
-			System.out.println();		
-		}
-		
+		System.out.println(ex1.solve(2, m2, 12));
 	}
 	
 	/**
