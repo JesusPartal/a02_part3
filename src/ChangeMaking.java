@@ -30,11 +30,30 @@ public class ChangeMaking {
 	 * @return: The index of first candidate to be selected.
 	 */
 	public int selectionFunctionFirstCandidate(MyList<Integer> candidates) {
-
 		//TO-DO
-		int e0 = candidates.getElement(0);
+		//-----------------------------
+		//Output Variable --> InitialValue
+		//-----------------------------
+		int res = -1;
 
-		return e0;
+		//OP1. Auxiliary variables:
+		//We use 'size' to compute just once the length of MyList 'items'.
+		int size = candidates.length();
+		//We use 'index' to state the index of the candidate being checked.
+		int index = 0;
+		//OP1. We traverse all elements in items, so as to find the first one not being picked so far.
+		while ((res == -1) && (index < size)) {
+			//OP1.1. If the item has not been picked before, we pick it
+			if (candidates.getElement(index) == 0){
+				res = index;
+			}
+			//OP1.2. We increase 'index' so as to try the next item
+			index++;
+		}
+		//-----------------------------
+		//Output Variable --> Return FinalValue
+		//-----------------------------
+		return res;
 	}
 
 		
@@ -50,14 +69,17 @@ public class ChangeMaking {
 	 */	
 	public int selectionFunctionBestCandidate( MyList<Integer> candidates ){
 			//TO-DO
-
-		int res = 0;
-		int e0 = candidates.getElement(0);
-		candidates.removeElement(0);
-		selectionFunctionFirstCandidate(candidates);
-		if (e0 > res)
-			res = e0;
-		candidates.addElement(0, e0);
+		int bestValue = 0;
+		int res = -1;
+		int index = candidates.length()-1;
+		while(index >=0){
+			int coin0 = candidates.getElement(index);
+			if(coin0 > bestValue) {
+				res = index;
+				bestValue = coin0;
+			}
+			index--;
+		}
 		return res;
 	}
 	
@@ -74,9 +96,11 @@ public class ChangeMaking {
 	 */	
 
 	public boolean feasibilityTest(int candidateValue, int amount, int changeGenerated){
-		
-			//TO-DO
-		return true;
+		//TO-DO
+		boolean res = false;
+		if (candidateValue + changeGenerated <= amount)
+			res = true;
+		return res;
 	}
 	
 	// -------------------------------------------------------------------
@@ -95,9 +119,19 @@ public class ChangeMaking {
 	 * @return: Whether the current solution is the final solution.
 	 */
 	public boolean solutionTest(MyList<Integer> candidates) {
-
 			//TO-DO
-		return true;
+		boolean res = true;
+		int size = candidates.length();
+		int index = 0;
+
+		while ((res == true) && (index < size)){
+			if(candidates.getElement(index) == 0){
+				res = false;
+			}
+			index++;
+		}
+
+		return res;
 	}
 
 
@@ -112,9 +146,15 @@ public class ChangeMaking {
 	 * @return: The objective function value of such solution.
 	 */	
 	public int  objectiveFunction(MyList<Integer> sol){
-		
 			//TO-DO
-		return 0;
+		int res = 0;
+		int size = sol.length() - 1;
+		while(size>= 0){
+			res = res + sol.getElement(size);
+			size--;
+		}
+
+		return res;
 	}
 	
 	//-------------------------------------------------------------------
@@ -132,6 +172,43 @@ public class ChangeMaking {
 	public MyList<Integer> solve(int typeSelectFunc, MyList<Integer> coinValues, int amount){
 			//TO-DO
 		MyList<Integer> res = null;
+
+		int solutionValue;
+
+		int changeGenerated = 0;
+
+		int scenario = 0;
+		// First Candidate
+		if (typeSelectFunc == 1)
+			scenario = 1;
+		// Best Candidate
+		else if (typeSelectFunc == 2)
+			scenario = 2;
+
+		res = new MyDynamicList<>();
+
+
+		while(solutionTest(res) == false) {
+			int itemSelected = -1;
+
+//			itemSelected = selectionFunctionBestCandidate(coinValues);
+
+			switch (scenario) {
+				case 1:
+					itemSelected = selectionFunctionFirstCandidate(coinValues);
+					break;
+				case 2:
+					itemSelected = selectionFunctionBestCandidate(coinValues);
+					break;
+			}
+
+			if (feasibilityTest(itemSelected, amount, changeGenerated) == true){
+				res.addElement(itemSelected, res.length()-1);
+				changeGenerated = changeGenerated + itemSelected;
+			}
+		}
+		solutionValue = objectiveFunction(res);
+		System.out.println("Solution = " + solutionValue);
 		return res;
 	}
 	
