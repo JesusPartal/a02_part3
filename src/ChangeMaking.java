@@ -1,6 +1,5 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+//JESUS PARTAL - R00092544
+
 
 /**
  * Classical Change making problem with an unlimited amount of coins of each type. <br>
@@ -33,10 +32,31 @@ public class ChangeMaking {
      *            far or not.
      * @return: The index of first candidate to be selected.
      */
-    public int selectionFunctionFirstCandidate(MyList<Integer> candidates) {
-        int res = 0;
-        System.out.println("DEBUG: selectionFunctionBestCandidate - Index: " + res + " with value: " + candidates.getElement(res));
+    public int selectionFunctionFirstCandidate(MyList<Integer> candidates, MyList<Integer> discarded) {
+        //-----------------------------
+        //Output Variable --> InitialValue
+        //-----------------------------
+        int res = -1;
 
+        //-----------------------------
+        //Aux Variables
+        //-----------------------------
+        int index = candidates.length() - 1;
+
+        //-----------------------------
+        //SET OF OPS
+        //-----------------------------
+        // Iterate through the candidates and look for the first candidate coin that was not discarded
+        while (index >= 0){
+            if((discarded.getElement(index)) == 0){
+                res = index;
+            }
+            index--;
+        }
+
+        //-----------------------------
+        //Output Variable --> Return FinalValue
+        //-----------------------------
         return res;
     }
 
@@ -51,22 +71,35 @@ public class ChangeMaking {
      * @param candidates: List of candidates
      * @return: The index of candidate to be selected.
      */
-    public int selectionFunctionBestCandidate( MyList<Integer> candidates ){
+    public int selectionFunctionBestCandidate( MyList<Integer> candidates, MyList<Integer> discarded ){
 
+        //-----------------------------
+        //Output Variable --> InitialValue
+        //-----------------------------
         int res = -1;
+
+        //-----------------------------
+        //Aux Variables
+        //-----------------------------
         int index = candidates.length() - 1;
         int maxValue = Integer.MIN_VALUE;
 
+        //-----------------------------
+        //SET OF OPS
+        //-----------------------------
+        // Iterate through the candidates and look for the best candidate coin except the discarded coins
         while (index >= 0){
             int c0 = candidates.getElement(index);
-            if(c0 > maxValue){
+            if((discarded.getElement(index)) == 0 && (c0 > maxValue)){
                 res = index;
                 maxValue = c0;
             }
             index--;
         }
 
-        System.out.println("DEBUG: selectionFunctionBestCandidate - Index: " + res + " with value: " + candidates.getElement(res));
+        //-----------------------------
+        //Output Variable --> Return FinalValue
+        //-----------------------------
         return res;
     }
 
@@ -83,12 +116,21 @@ public class ChangeMaking {
      */
 
     public boolean feasibilityTest(int candidateValue, int changeGenerated, int amount){
-
+        //-----------------------------
+        //Output Variable --> InitialValue
+        //-----------------------------
         boolean res = false;
 
+        //-----------------------------
+        //SET OF OPS
+        //-----------------------------
+        // If the candidate coin plus the change already generated are less or equal to the amount, then candidate is good
         if (candidateValue + changeGenerated <= amount)
             res = true;
 
+        //-----------------------------
+        //Output Variable --> Return FinalValue
+        //-----------------------------
         return res;
     }
 
@@ -108,11 +150,21 @@ public class ChangeMaking {
      * @return: Whether the current solution is the final solution.
      */
     public boolean solutionTest(MyList<Integer> candidates, int changeGiven, int amount) {
+        //-----------------------------
+        //Output Variable --> InitialValue
+        //-----------------------------
         boolean res = true;
 
+        //-----------------------------
+        //Aux Variables
+        //-----------------------------
         int size = candidates.length();
         int index = 0;
 
+        //-----------------------------
+        //SET OF OPS
+        //-----------------------------
+        // iterate through all the candidates and check if we can add another coin without exceeding the amount
         while((res == true) && (index < size)){
             if(candidates.getElement(index) + changeGiven <= amount){
                 res = false;
@@ -120,6 +172,9 @@ public class ChangeMaking {
             index++;
         }
 
+        //-----------------------------
+        //Output Variable --> Return FinalValue
+        //-----------------------------
         return res;
     }
 
@@ -134,30 +189,45 @@ public class ChangeMaking {
      * @param sol: The MyList containing the solution to the problem.
      * @return: The objective function value of such solution.
      */
-    public int  objectiveFunction(MyList<Integer> sol){
-        int res = 0;
+    public int  objectiveFunction(MyList<Integer> sol, int amount){
+        //-----------------------------
+        //Output Variable --> InitialValue
+        //-----------------------------
         int size = sol.length();
-        System.out.println("Size of sol is: " + size);
-        for (int i = 0; i < size; i++)
-            System.out.println(sol.getElement(i));
-
+        //-----------------------------
+        //Aux Variables
+        //-----------------------------
+        // create an array of length equal to sol to store flags
         boolean[] flags = new boolean[sol.length()];
+        //-----------------------------
+        //SET OF OPS
+        //-----------------------------
 
+        //Double for loop
         for(int i = 0; i < sol.length(); i++) {
+            //ignore already processed elements
             if (flags[i])
                 continue;
+
             flags[i] = true;
-            int tmp = sol.getElement(i);
-            int counter = 0;
+
+            //sum and mark processed elements as processed
+            int counter = 1;
             for(int j = i + 1; j < sol.length(); j++){
                 if(sol.getElement(j) == sol.getElement(i)) {
                     flags[j] = true;
-                    tmp++;
                     counter++;
                 }
             }
-            System.out.println("Coins of " + sol.getElement(i) + " = " + counter);
+            int coinCount = sol.getElement(i) * counter;
+            int accuracy = amount - sol.getElement(i) * counter;
+            System.out.println("Accuracy: " + amount + "-" +  coinCount+ "=" + accuracy + " / Coins of " + sol.getElement(i) + " x " + counter);
+            amount = amount - coinCount;
         }
+
+        //-----------------------------
+        //Output Variable --> Return FinalValue
+        //-----------------------------
         return size;
     }
 
@@ -174,42 +244,79 @@ public class ChangeMaking {
      * @return: A MyList containing the amount of coins of each type being selected.
      */
     public MyList<Integer> solve(int typeSelectFunc, MyList<Integer> coinValues, int amount){
-        //TO-DO
+        //-----------------------------
+        //Output Variable --> InitialValue
+        //-----------------------------
         MyList<Integer> res = new MyDynamicList<>();
+
+        //-----------------------------
+        //Aux Variables
+        //-----------------------------
         int solution = 0;
         int changeGiven = 0;
+
+        //-----------------------------
+        // I. SCENARIO IDENTIFICATION
+        //-----------------------------
         int scenario = 0;
+        //Rule 1. using the selectionFunctionFirstCandidate function
         if (typeSelectFunc == 1)
             scenario = 1;
+        //Rule 2. using the selectionFunctionBestCandidate function
         if (typeSelectFunc == 2)
             scenario = 2;
 
-//        int candidateCoin = selectionFunctionBestCandidate(coinValues);
-//        System.out.println("Candidate Index: " + candidateCoin + " - Candidate Value: " + coinValues.getElement(candidateCoin));
-//        res.addElement(0, coinValues.getElement(candidateCoin) );
-//        System.out.println(res.getElement(0));
+        //-----------------------------
+        //SET OF OPS
+        //-----------------------------
 
-        System.out.println("DEBUG");
-
+        //create a 'discarded' MyList same size as 'res' and initialize with all elements to 0
+        MyList<Integer> discarded = new MyDynamicList<>();
+        int size = coinValues.length();
+        for (int i = 0; i < size; i++)
+            discarded.addElement(0, 0);
 
         switch(scenario) {
+            // Rule 1. using the selectionFunctionFirstCandidate function
             case 1:
                 //
-                break;
-            case 2:
-                while(solutionTest(coinValues, changeGiven, amount) == false) {
+                while(solutionTest(coinValues, changeGiven, amount) == false){
                     int coinSelected;
-                    coinSelected = selectionFunctionBestCandidate(coinValues);
+                    coinSelected = selectionFunctionFirstCandidate(coinValues, discarded);
                     if(feasibilityTest(coinValues.getElement(coinSelected), changeGiven, amount) == true){
                         res.addElement(res.length(), coinValues.getElement(coinSelected));
                         changeGiven += coinValues.getElement(coinSelected);
                     } else {
-                        coinValues.removeElement(coinSelected);
+                        discarded.removeElement(coinSelected);
+                        discarded.addElement(coinSelected, 1);
+                    }
+
+                }
+                break;
+            // Rule 2. using the selectionFunctionBestCandidate option
+            case 2:
+                while(solutionTest(coinValues, changeGiven, amount) == false){
+                    int coinSelected;
+                    coinSelected = selectionFunctionBestCandidate(coinValues, discarded);
+                    if(feasibilityTest(coinValues.getElement(coinSelected), changeGiven, amount) == true){
+                        res.addElement(res.length(), coinValues.getElement(coinSelected));
+                        changeGiven += coinValues.getElement(coinSelected);
+                    } else {
+                        discarded.removeElement(coinSelected);
+                        discarded.addElement(coinSelected, 1);
                     }
                 }
         }
-        solution = objectiveFunction(res);
-        System.out.println("This solution requires  " + solution + " coins.");
+        solution = objectiveFunction(res, amount);
+        if (solution == 0) {
+            System.out.println("Ops! Looks like we couldn't find a solution with these parameters");
+        } else {
+            System.out.println("This solution requires a total of " + solution + " coins.");
+        }
+
+        //-----------------------------
+        //Output Variable --> Return FinalValue
+        //-----------------------------
         return res;
     }
 
