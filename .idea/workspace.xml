@@ -2,9 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e33f5703-42b9-483f-9968-d0b2bbe5202b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/a02_part3/ChangeMaking.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/a02_part3/ChangeMaking.class" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/out/production/a02_part3/MyMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/a02_part3/MyMain.class" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/out/production/a02_part3/MyDynamicList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/a02_part3/MyDynamicList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/a02_part3/MyList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/a02_part3/MyList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/a02_part3/MyMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/a02_part3/MyMain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/a02_part3/MyNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/a02_part3/MyNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/a02_part3/MyStaticList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/a02_part3/MyStaticList.class" afterDir="false" />
+>>>>>>> 50f18bec010c08912f6a0f895bbd4329732475fc
       <change beforePath="$PROJECT_DIR$/src/ChangeMaking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChangeMaking.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MyMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyMain.java" afterDir="false" />
     </list>
@@ -78,23 +87,55 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="139110758">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ChangeMaking.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="240">
               <caret line="243" column="84" lean-forward="true" selection-end-line="322" selection-end-column="1" />
+=======
+            <state relative-caret-position="447">
+              <caret line="320" column="1" selection-start-line="320" selection-start-column="1" selection-end-line="320" selection-end-column="1" />
+>>>>>>> 50f18bec010c08912f6a0f895bbd4329732475fc
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MyMain.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="495">
               <caret line="33" selection-start-line="33" selection-end-line="59" selection-end-column="9" />
+=======
+            <state relative-caret-position="466">
+              <caret line="59" column="5" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
+              <folding>
+                <element signature="e#1606#1607#0" expanded="true" />
+                <element signature="e#1619#1620#0" expanded="true" />
+              </folding>
+>>>>>>> 50f18bec010c08912f6a0f895bbd4329732475fc
             </state>
           </provider>
         </entry>
@@ -107,8 +148,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/MyMain.java" />
         <option value="$PROJECT_DIR$/src/ChangeMaking.java" />
+        <option value="$PROJECT_DIR$/src/MyMain.java" />
       </list>
     </option>
   </component>
@@ -116,16 +157,19 @@
     <option name="x" value="249" />
     <option name="y" value="23" />
     <option name="width" value="1431" />
-    <option name="height" value="982" />
+    <option name="height" value="920" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
       <pane id="AndroidView" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
+=======
+>>>>>>> 50f18bec010c08912f6a0f895bbd4329732475fc
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -142,12 +186,20 @@
           <select />
         </subPane>
       </pane>
+<<<<<<< HEAD
+=======
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+>>>>>>> 50f18bec010c08912f6a0f895bbd4329732475fc
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="solutionTest&#9;PSI&#9;JAVA://ChangeMaking#solutionTest" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543857921788" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -189,10 +241,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="249" y="23" width="1431" height="982" extended-state="0" />
+    <frame x="249" y="23" width="1431" height="920" extended-state="0" />
     <editor active="true" />
     <layout>
+<<<<<<< HEAD
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18358532" />
+=======
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17943107" />
+>>>>>>> 50f18bec010c08912f6a0f895bbd4329732475fc
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -201,7 +257,11 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Run" order="2" weight="0.3280899" />
+=======
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.326972" />
+>>>>>>> 50f18bec010c08912f6a0f895bbd4329732475fc
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3988764" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -209,7 +269,11 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32921347" />
+=======
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32824427" />
+>>>>>>> 50f18bec010c08912f6a0f895bbd4329732475fc
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -234,24 +298,108 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ChangeMaking.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="240">
           <caret line="243" column="84" lean-forward="true" selection-end-line="322" selection-end-column="1" />
+=======
+        <state relative-caret-position="447">
+          <caret line="320" column="1" selection-start-line="320" selection-start-column="1" selection-end-line="320" selection-end-column="1" />
+>>>>>>> 50f18bec010c08912f6a0f895bbd4329732475fc
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MyMain.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="495">
           <caret line="33" selection-start-line="33" selection-end-line="59" selection-end-column="9" />
+=======
+        <state relative-caret-position="466">
+          <caret line="59" column="5" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
+          <folding>
+            <element signature="e#1606#1607#0" expanded="true" />
+            <element signature="e#1619#1620#0" expanded="true" />
+          </folding>
+>>>>>>> 50f18bec010c08912f6a0f895bbd4329732475fc
         </state>
       </provider>
     </entry>
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>11</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>a02_part3</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
           <splitter-proportions>
             <option name="proportions">
               <list>

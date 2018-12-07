@@ -189,7 +189,11 @@ public class ChangeMaking {
      * @param sol: The MyList containing the solution to the problem.
      * @return: The objective function value of such solution.
      */
+<<<<<<< HEAD
     public int  objectiveFunction(MyList<Integer> sol, int amount){
+=======
+    public int  objectiveFunction(MyList<Integer> sol){
+>>>>>>> 50f18bec010c08912f6a0f895bbd4329732475fc
         //-----------------------------
         //Output Variable --> InitialValue
         //-----------------------------
@@ -203,6 +207,13 @@ public class ChangeMaking {
         //SET OF OPS
         //-----------------------------
 
+<<<<<<< HEAD
+=======
+        //-----------------------------
+        //SET OF OPS
+        //-----------------------------
+
+>>>>>>> 50f18bec010c08912f6a0f895bbd4329732475fc
         //Double for loop
         for(int i = 0; i < sol.length(); i++) {
             //ignore already processed elements
@@ -219,10 +230,14 @@ public class ChangeMaking {
                     counter++;
                 }
             }
+<<<<<<< HEAD
             int coinCount = sol.getElement(i) * counter;
             int accuracy = amount - sol.getElement(i) * counter;
             System.out.println("Accuracy: " + amount + "-" +  coinCount+ "=" + accuracy + " / Coins of " + sol.getElement(i) + " x " + counter);
             amount = amount - coinCount;
+=======
+            System.out.println("Coins of " + sol.getElement(i) + " x " + counter);
+>>>>>>> 50f18bec010c08912f6a0f895bbd4329732475fc
         }
 
         //-----------------------------
@@ -307,11 +322,19 @@ public class ChangeMaking {
                     }
                 }
         }
+<<<<<<< HEAD
         solution = objectiveFunction(res, amount);
         if (solution == 0) {
             System.out.println("Ops! Looks like we couldn't find a solution with these parameters");
         } else {
             System.out.println("This solution requires a total of " + solution + " coins.");
+=======
+        solution = objectiveFunction(res);
+        if (solution == 0) {
+            System.out.println("Ops! Looks like we couldn't find a solution with those coins");
+        } else {
+            System.out.println("This solution requires  " + solution + " coins.");
+>>>>>>> 50f18bec010c08912f6a0f895bbd4329732475fc
         }
 
         //-----------------------------
